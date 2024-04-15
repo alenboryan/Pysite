@@ -1,0 +1,66 @@
+{% extends 'info/layout.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'polls/css/polls.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'register' %}" method="post">
+    <style>
+        .input_field {
+            margin-top: 0,2px;
+            margin-bottom: 20px; /* Add margin-top here */
+        }
+        
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        
+        .input[type="submit"] {
+            background-color: #0056b3;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+    {% csrf_token %}
+    <div class="wrapper">
+        <div class="left">
+            <h3>Rocket Station</h3>   
+            <img src="https://i.imgur.com/eN4AKys.png" alt="Rocket_image">
+        </div>
+        <div class="right">
+            <div class="tabs">
+                <ul>
+                    <li class="register_li">Register</li>
+                </ul>
+            </div>
+            <div class="register">
+                <div class="input_field">
+                    <input type="text" name="firstname" id="firstname" value="" placeholder="Firstname" class="input">
+                </div>
+                <div class="input_field">
+                    <input type="text" name="lastname" id="lastname" value="" placeholder="Lastname" class="input">
+                </div>
+                <div class="input_field">
+                    <input type="text" name="username" id="username" value="" placeholder="Username" class="input">
+                </div>
+                <div class="input_field">
+                    <input type="password" name="password" id="password" value="" placeholder="Password" class="input">
+                </div>
+                <input type="submit" value="Sign Up" class="input">
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
