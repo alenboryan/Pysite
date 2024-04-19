@@ -48,32 +48,32 @@ Start exploring PySite today and take your Python skills to new heights!
 
 Project functionality -> API List
 
-  home 
+  home +
 
-  about
+  about +
 
-  login
+  login +
 
-  register
+  register +
 
-  logout
+  logout +
 
-  python_intro
+  python_intro +
 
-  python_syntax
+  python_syntax +
 
-  create
+  create +
 
 
 Database:
 
-  1.PyUser
+  1.PyUser +
 
-  2.Info
+  2.Info +
 
 Additional Info:
 
-  Add info about Django, Flask, NumPy, Pandas
+  Add info about Django, Flask, NumPy, Pandas +
 
   Add Quize Game 
 

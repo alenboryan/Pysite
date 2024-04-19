@@ -1,0 +1,114 @@
+{% extends 'info/layout.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9c9fc2;
+        }
+        .container {
+            width: 1000px; /* Set the width of the container to 1000 pixels */
+            height: 2500px; /* Set the height of the container to 600 pixels */
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+            /* Additional styles */
+            color: #333; /* Change text color */
+            font-size: 16px; /* Change font size */
+            line-height: 1.6; /* Change line height */
+            border: 1px solid #ccc; /* Add border */
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <h1>Django Framework Overview</h1>
+
+    <h2>Introduction to Django</h2>
+    <p>
+        Django is a Python-based programming framework. It's a Python coding tool that adds functionality and speeds up the process. Django includes Python code that has already been written and is ready to be used in a project. Django is a "framework" because it includes a fully functional set of classes, libraries, and modules that allow developers to do almost anything they need to create robust websites and apps.
+    </p>
+
+    <h2>Features Of Django</h2>
+    <ul>
+        <li>Rapid Development: Django was created with the goal of creating a framework that would allow developers to build web applications in less time. The project implementation phase takes a long time, but Django makes it happen quickly.</li>
+        <li>Enhance Security: Django's security goes beyond its explicit security features: the extensive experience and expertise of the Django user base bolster security efforts. You run the risk of accidentally introducing a security vulnerability into your module if you build your entire web app from scratch. You can be more confident that Django packages will protect your data because they are widely used, open-source, and well-reviewed by web developers.</li>
+        <li>Versatile: Django is a versatile framework that can be used to create applications in a variety of domains. Companies are now using Django to create a variety of applications, such as content management systems, social networking sites, and scientific computing platforms, among others.</li>
+        <li>Open Source: Django is a web application framework that is free and open source. It is freely available to the public. The source code is available for download from the public repository. The total cost of developing an application is reduced by using open source.</li>
+        <li>Vast and Supported Community: The Django web framework has a large and dedicated user base, with many talented Django developers donating their time and expertise to help develop, improve, and patch the software foundation. Your application can benefit from this commitment by utilizing the well-designed packages available to anyone building with Django.</li>
+    </ul>
+
+    <h2>Who is using Django?</h2>
+    <p>
+        Django is widely used by various websites such as:
+    </p>
+    <ul>
+        <li>The Washington Times</li>
+        <li>The Washington Post uses Django to handle its high traffic. Django is used by a number of other online publications.</li>
+        <li>Mozilla: Another web application that switched from PHP to Python, and thus to Django, is one of the most popular web browsers. It can now handle higher volumes of traffic and API requests.</li>
+        <li>Instagram: Django provides the functionality to Instagram that allows the web application to run smoothly, add new features, and quickly resolve issues.</li>
+        <li>Pinterest: This platform has well over 250 million monthly active users, handles massive amounts of media data, and still maintains a user-friendly interface. The creators were able to customize it to their needs thanks to its open-source framework.</li>
+    </ul>
+
+    <h2>Django Framework</h2>
+    <p>
+        Django's architecture is based on the MVT framework, which stands for MODEL, VIEW, and TEMPLATE. MVT is an alternative to the MVC framework, consisting of three components: Model, View, and Controller. 
+    </p>
+    <p>
+        The main difference between MVT and MVC is that the Django architecture handles the responsibilities that the MVC architecture's controller part handles. All of the controller-related tasks are handled by Django's templates. To put it another way, the template's contents are a mix of Django Template Language (also known as DTL) and HTML (HyperText Markup Language).
+    </p>
+    <h3>Model</h3>
+    <p>
+        The Model is a component of the web application that acts as a link between the user interface and the database. It is the object that implements the logic for the application's data domain in technical terms.
+    </p>
+    <h3>View</h3>
+    <p>
+        In the Django architecture, this component contains the UI logic.
+        The view is the web application's user interface, and it includes elements such as HTML, CSS, and other front-end technologies. In general, this UI is generated by the Models component, which also provides the content.
+    </p>
+    <h3>Template</h3>
+    <p>
+        When you need to create a dynamic website for a complex operation or function, templates make it simple to do so. Simply put, a dynamic website sends and receives changing or dynamic data. Typically, dynamic data is associated with a scenario in which each user is presented with their own personalized data. For example, different transactions in fintech products, or posts on social media websites like Facebook, Instagram, Twitter, etc.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Django is an excellent choice for projects that must deal with large amounts of content (e.g., media files), user interactions, high traffic, and complex functions or technology (e.g., machine learning). It is, however, simple enough for smaller projects or if you plan to scale your project to a much larger scale. That is why many businesses use Django with varying sizes and objectives.
+    </p>
+
+    <p>
+        If you are interested in making your career as a full-stack developer, you can explore our Python Certification Course. The course will cover the basics of Python along with the Django framework.
+    </p>
+
+    <p>
+        If you have any questions, please mention them in our comments section, and we will get back to you.
+    </p>
+
+    </div>
+</body>
+</html>
+{% endblock %}

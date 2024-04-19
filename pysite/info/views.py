@@ -76,5 +76,17 @@ def create(request):
 
 def add_info(request):
     info = Info.objects.all()
-    return render(request, 'info/info.html', {"info": info})
+    return render(request, 'info/infousers.html', {"info": info})
 
+def django_info(request):
+    return render(request, 'info/django.html')
+
+
+def flask_info(request):
+    return render(request, 'info/flask.html')
+
+def pandas_info(request):
+    return render(request, 'info/pandas.html')
+
+def numpy_info(request):
+    return render(request, 'info/numpy.html')

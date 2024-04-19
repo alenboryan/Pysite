@@ -12,5 +12,9 @@ urlpatterns = [
     path("error/", views.error, name="error"),
     path("python_syntax/", views.python_syntax, name = "python_syntax"), 
     path("create/", views.create, name = "create"),
-    path("info_from_users/", views.add_info, name = "add_info")
+    path("info_from_users/", views.add_info, name = "add_info"),
+    path("django_info/", views.django_info, name = "django_info"),
+    path("flask_info/", views.flask_info, name = "flask_info"),
+    path("pandas_info/", views.pandas_info, name = "pandas_info"),
+    path("numpy_info/", views.numpy_info, name = "numpy_info"),
 ]
