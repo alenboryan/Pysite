@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'polls/css/polls.css' %}">
+<link rel="stylesheet" href="{% static 'info/css/info.css' %}">
 {% endblock %}
 
 {% block content %}
-<form action="{% url 'register' %}" method="post">
+<form action="{% url 'info:register' %}" method="post">
     <style>
         .input_field {
             margin-top: 0,2px;

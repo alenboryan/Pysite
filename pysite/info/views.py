@@ -1,10 +1,12 @@
 import re
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login as auth_login, logout, authenticate
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-from .models import PyUser, Info
+
+from .models import Choice, PyUser, Info, Question
 from .forms import InfoForm
+from django.urls import reverse
 
 def index(request):
     return render(request, 'info/index.html')
@@ -90,3 +92,49 @@ def pandas_info(request):
 
 def numpy_info(request):
     return render(request, 'info/numpy.html')
+
+
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, "info/detail.html", {"question": question})
+
+
+def results(request):
+    # Retrieve all questions
+    questions = Question.objects.all()
+    
+    # Check if there are no questions available
+    if not questions:
+        return render(
+            request,
+            "info/detail.html",
+            {
+                "error_message": "No questions available.",
+            },
+        )
+
+    return render(request, "info/results.html", {"questions": questions})
+
+def vote(request):
+    questions = Question.objects.all()
+
+    if request.method == 'POST':
+        try:
+            question_id = request.POST["question_id"]
+            question = get_object_or_404(questions, pk=question_id)
+            selected_choice = question.choice_set.get(pk=request.POST["choice"])
+        except (KeyError, Choice.DoesNotExist, Question.DoesNotExist):
+            return render(
+                request,
+                "info/detail.html",
+                {
+                    "questions": questions,
+                    "error_message": "You didn't select a choice.",
+                },
+            )
+        else:
+            selected_choice.votes += 1
+            selected_choice.save()
+            return HttpResponseRedirect(reverse("info:results"))
+
+    return render(request, "info/detail.html", {"questions": questions})

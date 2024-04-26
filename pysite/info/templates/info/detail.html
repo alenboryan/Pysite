@@ -1,0 +1,86 @@
+{% extends 'info/layout.html' %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vote</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 0;
+            }
+
+            form {
+                width: 80%;
+                margin: 20px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+
+            fieldset {
+                border: none;
+                margin-bottom: 20px;
+            }
+
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+
+            input[type="submi"] {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .error-message {
+                color: red;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Vote</h1>
+
+        <form action="{% url 'info:vote' %}" method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+                <fieldset>
+                    <legend>{{ question.question_text }}</legend>
+                    {% for choice in question.choice_set.all %}
+                        <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}">
+                        <label for="choice{{ choice.id }}">{{ choice.choice_text }}</label><br>
+                    {% endfor %}
+                    <input type="hidden" name="question_id" value="{{ question.id }}">
+                </fieldset>
+            {% endfor %}
+            <input type="submi" value="Vote">
+        </form>
+        
+        {% if error_message %}
+            <p class="error-message"><strong>{{ error_message }}</strong></p>
+        {% endif %}
+    </body>
+    </html>
+{% endblock %}
+

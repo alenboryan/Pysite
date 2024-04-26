@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-
+app_name = 'info'
 urlpatterns = [
     path("", views.index, name="index"),
     path('about/', views.about, name="about"),
@@ -17,4 +17,7 @@ urlpatterns = [
     path("flask_info/", views.flask_info, name = "flask_info"),
     path("pandas_info/", views.pandas_info, name = "pandas_info"),
     path("numpy_info/", views.numpy_info, name = "numpy_info"),
+    path("<int:question_id>/", views.detail, name="detail"),
+    path("results/", views.results, name="results"),
+    path("vote/", views.vote, name="vote"),
 ]

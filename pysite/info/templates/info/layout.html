@@ -45,10 +45,10 @@
 </header>
 
 <nav>
-    <a href="{% url 'index' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'info:index' %}">Home</a>
+    <a href="{% url 'info:about' %}">About</a>
+    <a href="{% url 'info:login' %}">Login</a>
+    <a href="{% url 'info:register' %}">Register</a>
  
 </nav>
 
@@ -56,14 +56,14 @@
 <div class="left-nav">
    <nav>
       <h2>PYsite</h2>
-       <a href="{% url 'python_syntax' %}">Python Syntax</a>
-       <a href="{% url 'python_intro' %}">Python Introduction</a>
-       <a href="{% url 'add_info' %}">Info From Users</a>
-       <a href="{% url 'django_info' %}">Django</a>
-       <a href="{% url 'flask_info' %}">Flask</a>
-       <a href="{% url 'pandas_info' %}">Pandas</a>
-       <a href="{% url 'numpy_info' %}">NumPy</a>
-       <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-cricle"></i>Add Info</button></li></a>
+       <a href="{% url 'info:python_syntax' %}">Python Syntax</a>
+       <a href="{% url 'info:python_intro' %}">Python Introduction</a>
+       <a href="{% url 'info:add_info' %}">Info From Users</a>
+       <a href="{% url 'info:django_info' %}">Django</a>
+       <a href="{% url 'info:flask_info' %}">Flask</a>
+       <a href="{% url 'info:pandas_info' %}">Pandas</a>
+       <a href="{% url 'info:numpy_info' %}">NumPy</a>
+       <a href="{% url 'info:create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-cricle"></i>Add Info</button></li></a>
    </nav>
 </div>
 <section>
