@@ -42,7 +42,7 @@ services:
     stdin_open: true
     tty: true
     env_file: env
-    command: bash -c 'python3 pysite/manage.py migrate && python3 pysite/manage.py runserver 0.0.0.0:8000'
+    command: bash -c 'python3 pysite/manage.py runserver 0.0.0.0:8000'
     networks:
       - pgnet  
 

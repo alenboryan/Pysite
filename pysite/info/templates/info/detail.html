@@ -1,67 +1,18 @@
-{% extends 'info/layout.html' %}
+{% load static %}
+<!DOCTYPE html>
 
-{% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vote</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f2f2f2;
-                margin: 0;
-                padding: 0;
-            }
-
-            form {
-                width: 80%;
-                margin: 20px auto;
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-
-            h1 {
-                color: #333;
-                text-align: center;
-            }
-
-            fieldset {
-                border: none;
-                margin-bottom: 20px;
-            }
-
-            input[type="radio"] {
-                margin-right: 5px;
-            }
-
-            input[type="submi"] {
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                margin-top: 10px;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .error-message {
-                color: red;
-                font-weight: bold;
-                text-align: center;
-                margin-top: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Vote</h1>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="{% static 'info/css/quiz.css' %}">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Game</h1>
+        
+        <!-- Your form for displaying questions and choices -->
         <form action="{% url 'info:vote' %}" method="post">
             {% csrf_token %}
             {% for question in questions %}
@@ -74,13 +25,15 @@
                     <input type="hidden" name="question_id" value="{{ question.id }}">
                 </fieldset>
             {% endfor %}
-            <input type="submi" value="Vote">
+            <input type="submit" value="Vote">
         </form>
         
         {% if error_message %}
             <p class="error-message"><strong>{{ error_message }}</strong></p>
         {% endif %}
-    </body>
-    </html>
-{% endblock %}
+        
+    </div>
+</body>
+</html>
+
 
