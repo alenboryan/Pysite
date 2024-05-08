@@ -38,3 +38,9 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+    
+class Pysintax(models.Model):
+    content = models.CharField(max_length=3000)
+    
+class DjangoInfo(models.Model):
+    content = models.CharField(max_length=3000)
