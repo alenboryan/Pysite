@@ -1,5 +1,6 @@
 from datetime import timezone
 import datetime
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -44,3 +45,13 @@ class Pysintax(models.Model):
     
 class DjangoInfo(models.Model):
     content = models.CharField(max_length=3000)
+    
+class Studying(models.Model):
+    title = models.CharField(max_length=500, default=None)
+    content = models.CharField(max_length=5000, default='')
+    
+    def __str__(self):
+        return self.content
+
+class FlaskInfo(models.Model):
+    content = models.CharField(max_length=5000)

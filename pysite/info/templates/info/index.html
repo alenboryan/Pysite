@@ -1,1 +1,76 @@
 {% extends 'info/layout.html' %}
+{% block content %}
+<style>
+    /* CSS Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #2f2fa2;
+    }
+    h1, h2, h3 {
+        color: #ffff; /* White text color */
+        font-family: fantasy; /* Font family */
+        font-size: 800%; /* Font size */
+        text-align: left;
+    }
+    h1{
+        color: #ce7a8a;
+    }
+    h2{
+        color: #ce7a8a;
+    }
+
+    h3{
+        color: #ce7a8a;
+    }
+      .container {
+        width: 1500px; /* Set the width of the container to 1000 pixels */
+        background-color: #ce7a8a;
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        top: 80px;
+      }
+    p {
+        color: #ffff;
+        position: relative;
+        top: 20px;
+    }
+    code {
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+    nav a:hover {
+        background-color: #ce7a8a; /* Background color on hover */
+        color: white; /* Text color on hover */
+        text-decoration: none;
+        padding: 20px 20px;
+    }
+    img{
+        mix-blend-mode:multiply;
+        display: block;
+        margin-left: 1100px;
+        position: relative;
+        top: -700px;
+        width: 20%; /* Increase the width to 120% on hover */
+        height: 20%;
+    }
+</style>
+    <h1>S t u d y i n g</h1>
+    <h2>P r o g r a m m i n g</h2>
+    <h3>H e r e!</h3>
+    
+    <div  class = "container">
+        <p>Welcome to Pysite: Your Ultimate Destination for Programming Education<br>
+           Unlock the World of Code with Pysite: Empowering Your Journey in Programming<br>
+           Pysite: Where Learning to Code Becomes an Adventure</p><br>
+    </div>
+
+    
+<section>
+        <img src="https://static.vecteezy.com/system/resources/previews/011/153/363/non_2x/3d-web-developer-working-on-project-illustration-png.png" alt="Programming Evolution">
+</section>
+{%endblock%}

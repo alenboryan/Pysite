@@ -8,73 +8,40 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'info/css/info.css' %}">
     <style>
-      .left-nav {
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 200px; /* Adjust the width as needed */
-         height: 100%; /* Ensures the navigation bar covers the entire height */
-         background-color: #ffffff; /* Background color of the navigation bar */
-         color: #fff; /* Text color */
-       }
-       
-       .left-nav nav {
-         padding-top: 20px; /* Add some padding to separate links from the top */
-       }
-       
-       .left-nav a {
-         display: block;
-         padding: 10px 20px; /* Padding for each link */
-         color: #2c2a2a; /* Text color */
-         text-decoration: none; /* Remove underlines from links */
-       }
-       
-       .left-nav a:hover {
-         background-color: #9c9fc2; /* Background color on hover */
-       }
-       
-       .section-container {
-         margin-left: 200px; /* Adjust margin to make space for the left navigation bar */
-       }
+        nav a:hover {
+            background-color:#ce7a8a; /* Background color on hover */
+            color: black; /* Text color on hover */
+            text-decoration: none;
+            padding: 20px 20px;
+        }
+        h4{
+            color: #ffff; /* White text color */
+            font-size: 200%; /* Font size */
+            font-family: fantasy; /* Font family */
+            margin-right: 60%;
+            position:relative;
+            top:-33px;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Welcome to My Website</h1>
-</header>
+
 
 <nav>
     <a href="{% url 'info:index' %}">Home</a>
     <a href="{% url 'info:about' %}">About</a>
     <a href="{% url 'info:login' %}">Login</a>
-
- 
+    <a href="{% url 'info:studying' %}">Studying</a>
+    <h4>P y s i t e</h4>
 </nav>
 
-
-<div class="left-nav">
-   <nav>
-      <h2>PYsite</h2>
-       <a href="{% url 'info:python_syntax' %}">Python Syntax</a>
-       <a href="{% url 'info:python_intro' %}">Python Introduction</a>
-       <a href="{% url 'info:add_info' %}">Info From Users</a>
-       <a href="{% url 'info:django_info' %}">Django</a>
-       <a href="{% url 'info:flask_info' %}">Flask</a>
-       <a href="{% url 'info:pandas_info' %}">Pandas</a>
-       <a href="{% url 'info:numpy_info' %}">NumPy</a>
-       <a href="{% url 'info:vote' %}">Quiz</a>
-       <a href="{% url 'info:create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-cricle"></i>Add Info</button></li></a>
-   </nav>
-</div>
 <section>
     {% block content %}
     {% endblock %}
 </section>
 
-<footer>
-    <p>&copy; 2024 My Website. All rights reserved.</p>
-</footer>
+
 
 </body>
 </html>

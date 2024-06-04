@@ -4,7 +4,7 @@ from django.contrib.auth import login as auth_login, logout, authenticate
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 
-from .models import Choice, PyUser, Info, Question
+from .models import Choice, PyUser, Info, Question, Studying
 from .forms import InfoForm
 from django.urls import reverse
 
@@ -138,3 +138,8 @@ def vote(request):
             return HttpResponseRedirect(reverse("info:results"))
 
     return render(request, "info/detail.html", {"questions": questions})
+
+def studying(request):
+    content = Studying.objects.all()
+    return render(request, 'info/studying.html',{"content":content})
+        
