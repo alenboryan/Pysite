@@ -4,7 +4,7 @@ from django.contrib.auth import login as auth_login, logout, authenticate
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 
-from .models import Choice, PyUser, Info, Question, Studying
+from .models import Choice, PyUser, Info, Question, Studying, Pysyntax, DjangoInfo , Pyintro
 from .forms import InfoForm
 from django.urls import reverse
 
@@ -57,10 +57,12 @@ def log_out(request):
     return HttpResponseRedirect("/info/login")
 
 def python_introduction(request):
-    return render(request, "info/intro.html")
+    contents = Pyintro.objects.all()
+    return render(request, "info/intro.html",{'contents': contents})
 
 def python_syntax(request):
-    return render(request, "info/syntax.html")
+    contents = Pysyntax.objects.all()
+    return render(request, 'info/syntax.html', {'contents': contents})
 
 def error(request):
     return render(request, "info/error.html")
@@ -81,7 +83,8 @@ def add_info(request):
     return render(request, 'info/infousers.html', {"info": info})
 
 def django_info(request):
-    return render(request, 'info/django.html')
+    contents = DjangoInfo.objects.all()
+    return render(request, 'info/django.html', {'contents': contents})
 
 
 def flask_info(request):
